@@ -4,9 +4,15 @@
 #include "LinkedQueue.h"
 #include "ArrayDeque.h"
 #include "LinkedDeque.h"
+#include "QueueUsingStack.h"
 using namespace std;
 int main(){
-    LinkedDeque<int>* q = new LinkedDeque<int>();
+    QueueUsingStack<int> q;
+    for(int i=0; i<4; i++)q.push(i);
+    for(int i=0; i<2; i++)cout<<q.pop()<<endl;
+    for(int i=4; i<6; i++)q.push(i);
+    while(!q.isEmpty())cout<<q.pop()<<endl;
+    /*LinkedDeque<int>* q = new LinkedDeque<int>();
     try{
         for(int i=0; i<3; i++){
             q->insertFront(i); 
@@ -16,7 +22,7 @@ int main(){
         while(!q->isEmpty()){q->deleteFront(); q->print();}
     }catch(string s){
         cout<<s<<endl;
-    }
+    }*/
     /*ArrayDeque<int>* q = new ArrayDeque<int>();
     try{
         for(int i=0; i<3; i++){q->insertFront(i); q->print();}
