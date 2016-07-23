@@ -92,7 +92,8 @@ T& ArrayDeque<T>::getFront(){
 template<class T>
 T& ArrayDeque<T>::getRear(){
     if(isEmpty())throw string("Deque underflow");
-    return arr[rear];
+    int i = ((rear==0)?n-1:rear-1);
+    return arr[i];
 }
 
 template<class T>
