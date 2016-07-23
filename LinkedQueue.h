@@ -7,6 +7,7 @@ using namespace std;
 template<class T>
 class LinkedQueue{
     Node<T>* head;
+    Node<T>* tail;
     public:
         LinkedQueue();
         void enqueue(T& object);
@@ -18,12 +19,14 @@ class LinkedQueue{
 template<class T>
 LinkedQueue<T>::LinkedQueue(){
     head = NULL;
+    tail = NULL;
 }
 
 template<class T>
 void LinkedQueue<T>::enqueue(T& object){
-    Node<T>* n = new Node<T>(object, head);
-    head = n;
+    Node<T>* n = new Node<T>(object);
+    if(tail==NULL){head = n; tail = n;}
+    else{ tail->next = n; tail = n;}
 }
 
 template<class T>
@@ -31,10 +34,9 @@ T& LinkedQueue<T>::dequeue(){
     if(head==NULL)throw string("Empty Queue");
     Node<T>* n = head;
     head = head->next;
-    T d = n->data;
-    //n->next=NULL;
+    T t = n->data;
     delete n;
-    return d;
+    return t;
 }
 
 template<class T>
