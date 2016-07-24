@@ -9,10 +9,24 @@
 #include "MaxSubArray.h"
 #include <queue>
 #include "QueueBinaryNumber.h"
+#include "KQueues.h"
 using namespace std;
 
 int main(){
-    printNBinaryNumbers(10);
+    KQueues kq(7,3);
+    kq.enqueue(1,0); kq.print();
+    kq.enqueue(2,1); kq.print();
+    kq.enqueue(3,2); kq.print();
+    kq.enqueue(4,0); kq.print();
+    kq.enqueue(5,1); kq.print();
+    kq.enqueue(6,2); kq.print();
+    kq.dequeue(0); kq.print();
+    kq.dequeue(1); kq.print();
+    kq.dequeue(2); kq.print();
+    kq.dequeue(0); kq.print();
+    kq.dequeue(1); kq.print();
+    kq.dequeue(2); kq.print();
+    /*printNBinaryNumbers(10);*/
     
     /*int arr[] = {8, 5, 10, 7, 9, 4, 15, 12, 90, 13};
     maxSubArray(arr, 10, 4);*/
