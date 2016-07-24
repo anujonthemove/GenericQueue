@@ -7,11 +7,15 @@
 #include "LinkedDeque.h"
 #include "QueueUsingStack.h"
 #include "MaxSubArray.h"
+#include <queue>
+#include "QueueBinaryNumber.h"
 using namespace std;
 
 int main(){
-    int arr[] = {8, 5, 10, 7, 9, 4, 15, 12, 90, 13};
-    maxSubArray(arr, 10, 4);
+    printNBinaryNumbers(10);
+    
+    /*int arr[] = {8, 5, 10, 7, 9, 4, 15, 12, 90, 13};
+    maxSubArray(arr, 10, 4);*/
     
     /*QueueUsingStack<int> q;
     for(int i=0; i<4; i++)q.push(i);
